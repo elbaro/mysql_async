@@ -345,11 +345,7 @@ impl crate::Conn {
     }
 
     /// Helper, that executes the given statement with the given params.
-    pub(crate) async fn execute_statement<P>(
-        &mut self,
-        statement: &Statement,
-        params: P,
-    ) -> Result<()>
+    pub async fn execute_statement<P>(&mut self, statement: &Statement, params: P) -> Result<()>
     where
         P: Into<Params>,
     {
